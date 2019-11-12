@@ -7,9 +7,11 @@
                 </div>
             </div>
             <div class="button-wrapper">
+                <router-link to="/capture">
                 <div class="button camera-button">
                     Open camera
                 </div>
+                </router-link>
                 <div class="button clear-button__disable">
                     Clear history
                 </div>

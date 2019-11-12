@@ -40,11 +40,27 @@ body{
 }
 
 .video-output{
+    display: flex;
     width: 640px;
     height: 360px;
     background-color: #D8D8D8;
     outline: 1px solid #979797;
-    padding-top: 38px;
+}
+
+.video{
+    display: flex;
+    height: 360px;
+    width: 640px;
+    z-index: 1;
+}
+
+.marker{
+    display: flex;
+    position: fixed;
+    z-index: 2;
+    margin-top: 38px;
+    margin-left: 25vh;
+
 }
 
 .button-wrapper{
@@ -72,7 +88,6 @@ body{
 }
 
 .camera-button{
-
     color: #FFFFFF;
     background-color: #4B9C7B;
 }
