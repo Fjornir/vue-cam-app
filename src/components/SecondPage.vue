@@ -12,22 +12,20 @@
                     </div>
                 </div>
                 <div class="button-wrapper">
-                    <button v-on:click="printScreen" class="button camera-button">
+                    <div v-on:click="printScreen" id="cap" class="button camera-button">
                         Capture
-                    </button>
+                    </div>
                     <router-link to="/">
-                        <button class="button back-button">
+                        <div class="button back-button">
                             Back
-                        </button>
+                        </div>
                     </router-link>
                 </div>
             </div>
 <!--            <canvas class="hid" id="hidden-canvas"></canvas>-->
 <!--            <canvas class="hid" id="can"></canvas>-->
             <canvas id="canvas"></canvas>
-            <History
-                v-bind:images="images"
-            />
+
         </div>
     </div>
 </template>
@@ -35,16 +33,16 @@
 <script >
 
     import "../css/style.css"
-    import History from "./History";
+
 
     export default {
         name: "SecondPage",
-        components: {History},
+
         data() {
             return {
-                images: [
-                    {canvas: document.querySelector('canvas'), loaded:false}
-                ]
+                // images: [
+                //     {canvas: document.querySelector('canvas'), loaded:false}
+                // ]
             };
         },
 
@@ -82,7 +80,7 @@
                 // Set img src
                 img.setAttribute('src', imgUrl);
 
-                photos.appendChild(img);
+                photos.prepend(img);
 
             }
 

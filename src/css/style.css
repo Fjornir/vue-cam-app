@@ -1,23 +1,35 @@
 body *{
     box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html{
+    height: 98vh;
+    padding: 0;
+    margin: 0;
 }
 
 body{
-    padding: 0 74px 74px 74px;
     background-color: #F2F2F2;
+    height: 100%;
 }
 
 #app{
-   margin: 0;
-    padding: 0;
+   display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    padding: 5vh 0 5vh 0;
 }
 
 .page-wrapper{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 84vh;
+    max-height: 80vh;
     padding-top: 50px;
+
 }
 
 .app-wrapper{
@@ -46,7 +58,6 @@ body{
     width: 640px;
     height: 360px;
     background-color: #D8D8D8;
-    outline: 1px solid #979797;
 }
 
 .video{
@@ -61,7 +72,6 @@ body{
     position: absolute;
     z-index: 2;
     margin-top: 38px;
-
 }
 
 #canvas {
@@ -85,12 +95,23 @@ body{
     font-weight: bold;
     font-size: 18px;
     padding: 15px 0;
+    user-select: none;
 }
 
 .button*{
     margin: 10px;
+}
+
+a{
     text-decoration: none;
 }
+
+.camera-button:hover{
+    background-color: #319843;
+    transition: .3s;
+    /*font-size: 20px;*/
+}
+
 
 .camera-button{
     color: #FFFFFF;
@@ -98,14 +119,26 @@ body{
 }
 
 .clear-button__disable {
+    text-decoration: none;
     box-shadow: 0 0 0;
     color: #FFFFFF;
     background-color: #BDBDBD;
 }
 
+.clear-button__enable{
+    color: #FFFFFF;
+    background-color: #b54041;
+}
+
 .back-button{
+    text-decoration: none;
     background-color: #FFFFFF;
     color: #4B9C7B;
+}
+
+.back-button:hover{
+    color: white;
+    background-color: #b54041;
 }
 
 .history-wrapper{
@@ -114,8 +147,7 @@ body{
     justify-content: space-between;
     width: 100%;
     height: 240px;
-    padding-top: 80px;
-
+    padding: 0 10vh;
 }
 
 .history-name{
@@ -126,8 +158,16 @@ body{
 }
 
 .history-items{
-    max-width: 100%;
-
+    /*align-content: center;*/
+    /*display: grid;*/
+    /*max-width: 100%;*/
+    /*grid-template-columns: repeat(5, 1fr);*/
+    /*justify-content: space-between;*/
+    /*display: grid;*/
+    /*align-items: center;*/
+    /*justify-content: center;*/
+    /*grid-template-columns: repeat(4, 1fr);*/
+    /*grid-gap: 30px 20px ;*/
     /*display: flex;*/
     /*flex-direction: row;*/
     /*justify-content: flex-start;*/
@@ -135,15 +175,17 @@ body{
 }
 
 .history-item{
-    /*margin-right: 40px;*/
-    /*height: 180px;*/
-    /*width: 320px;*/
-    /*background-color: #D8D8D8;*/
-    /*outline: 1px solid #979797;*/
 
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-gap: 20px;
+    max-width: 100%;
+    grid-template-columns: repeat(4, 0fr);
+    /*grid-template-columns: repeat(5, 1fr);*/
+    /*display: grid;*/
+    /*!*align-items: center;*!*/
+    justify-content: space-between;
+    /*grid-template-columns: repeat(4, 1fr);*/
+    grid-gap: 30px 30px ;
+
 }
 
 #photos img {
@@ -155,4 +197,48 @@ body{
 
 
 
+/* !*Large desktops and laptops !*/
+/*@media (min-width: 1200px) {*/
+/*    .history-item{*/
+/*        display: grid;*/
+/*        grid-template-columns: repeat(5, 1fr);*/
+/*        grid-gap: 30px 0 ;*/
+/*    }*/
+
+/*}*/
+
+/*/ Portrait tablets and medium desktops !*!*@media (min-width: 992px) and (max-width: 1199px) {*!*/
+/*    .history-item{*/
+/*        display: grid;*/
+/*        grid-template-columns: repeat(3, 1fr);*/
+/*        grid-gap: 30px 0 ;*/
+/*    }*/
+
+/*}*/
+
+/*/ Portrait tablets and small desktops !*!*@media (min-width: 768px) and (max-width: 991px) {*!*/
+/*    .history-item{*/
+/*        display: grid;*/
+/*        grid-template-columns: repeat(2, 1fr);*/
+/*        grid-gap: 30px 0 ;*/
+/*    }*/
+/*}*/
+
+/*/ Landscape phones and portrait tablets !*!*@media (max-width: 767px) {*!*/
+/*    .history-item{*/
+/*        display: grid;*/
+/*        grid-template-columns: repeat(2, 1fr);*/
+/*        grid-gap: 30px 0 ;*/
+/*    }*/
+/*}*/
+
+
+/*/ Landscape phones and smaller *!*!*!*/
+/*@media (max-width: 480px) {*/
+/*    .history-item{*/
+/*        display: grid;*/
+/*        grid-template-columns: repeat(2, 1fr);*/
+/*        grid-gap: 30px 0 ;*/
+/*    }*/
+/*}*/
 

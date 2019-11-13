@@ -8,28 +8,29 @@
             </div>
             <div class="button-wrapper">
                 <router-link to="/capture">
-                <button class="button camera-button">
+                <div class="button camera-button">
                     Open camera
-                </button>
+                </div>
                 </router-link>
-                <button class="button clear-button__disable">
+                <div id="clr" class="button clear-button__disable">
                     Clear history
-                </button>
+                </div>
             </div>
 
         </div>
-        <History />
+        {{name}}
     </div>
 </template>
 
 <script>
     import "../css/style.css"
-    import History from "./History";
+
 
 
     export default {
         name: "FirstPage",
-        components: {History},
+        props:{name}
+
     }
 </script>
 
