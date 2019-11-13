@@ -41,6 +41,8 @@ body{
 
 .video-output{
     display: flex;
+    flex-direction: column;
+    align-items: center;
     width: 640px;
     height: 360px;
     background-color: #D8D8D8;
@@ -56,11 +58,14 @@ body{
 
 .marker{
     display: flex;
-    position: fixed;
+    position: absolute;
     z-index: 2;
     margin-top: 38px;
-    margin-left: 25vh;
 
+}
+
+#canvas {
+    display: none;
 }
 
 .button-wrapper{
@@ -84,7 +89,7 @@ body{
 
 .button*{
     margin: 10px;
-
+    text-decoration: none;
 }
 
 .camera-button{
@@ -121,14 +126,27 @@ body{
 }
 
 .history-items{
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    width: 100%;
+    max-width: 100%;
+
+    /*display: flex;*/
+    /*flex-direction: row;*/
+    /*justify-content: flex-start;*/
+    /*width: 100%;*/
 }
 
 .history-item{
-    margin-right: 40px;
+    /*margin-right: 40px;*/
+    /*height: 180px;*/
+    /*width: 320px;*/
+    /*background-color: #D8D8D8;*/
+    /*outline: 1px solid #979797;*/
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 20px;
+}
+
+#photos img {
     height: 180px;
     width: 320px;
     background-color: #D8D8D8;

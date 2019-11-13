@@ -8,13 +8,13 @@
             </div>
             <div class="button-wrapper">
                 <router-link to="/capture">
-                <div class="button camera-button">
+                <button class="button camera-button">
                     Open camera
-                </div>
+                </button>
                 </router-link>
-                <div class="button clear-button__disable">
+                <button class="button clear-button__disable">
                     Clear history
-                </div>
+                </button>
             </div>
 
         </div>
@@ -26,9 +26,10 @@
     import "../css/style.css"
     import History from "./History";
 
+
     export default {
         name: "FirstPage",
-        components: {History}
+        components: {History},
     }
 </script>
 

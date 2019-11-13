@@ -12,17 +12,22 @@
                     </div>
                 </div>
                 <div class="button-wrapper">
-                    <div class="button camera-button">
+                    <button v-on:click="printScreen" class="button camera-button">
                         Capture
-                    </div>
+                    </button>
                     <router-link to="/">
-                        <div class="button back-button">
+                        <button class="button back-button">
                             Back
-                        </div>
+                        </button>
                     </router-link>
                 </div>
             </div>
-            <History />
+<!--            <canvas class="hid" id="hidden-canvas"></canvas>-->
+<!--            <canvas class="hid" id="can"></canvas>-->
+            <canvas id="canvas"></canvas>
+            <History
+                v-bind:images="images"
+            />
         </div>
     </div>
 </template>
@@ -31,14 +36,15 @@
 
     import "../css/style.css"
     import History from "./History";
-    //const video = document.getElementById('video');
 
     export default {
         name: "SecondPage",
         components: {History},
-        data:function() {
+        data() {
             return {
-
+                images: [
+                    {canvas: document.querySelector('canvas'), loaded:false}
+                ]
             };
         },
 
@@ -56,14 +62,42 @@
                         video.play()
                     }
                 }).catch((err) =>  Error(err))
+            },
+
+
+            async printScreen(){
+
+                let video = document.getElementById('video');
+                let photo = document.getElementById('canvas');
+                let photoContext = photo.getContext('2d');
+                const photos = document.getElementById('photos');
+
+                photoContext.drawImage(video, 0, 0, photo.width, photo.height);
+
+                const imgUrl = photo.toDataURL('image/png');
+
+                // Create img element
+                const img = document.createElement('img');
+
+                // Set img src
+                img.setAttribute('src', imgUrl);
+
+                photos.appendChild(img);
+
             }
+
         },
         mounted() {
             this.Camera();
+            //this.printScreen();
         }
     }
 </script>
 
 <style scoped>
-
+    .hid{
+        width: 500px;
+        height: 500px;
+        outline: 1px solid red;
+    }
 </style>
