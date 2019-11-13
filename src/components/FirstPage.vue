@@ -1,10 +1,34 @@
 <template>
-    $END$
+    <div class="page-wrapper">
+        <div class="app-wrapper">
+            <div class="img-wrapper">
+                <div class="img">
+                    <img src="../assets/PhotoGallery.png" />
+                </div>
+            </div>
+            <div class="button-wrapper">
+                <router-link to="/capture">
+                <div class="button camera-button">
+                    Open camera
+                </div>
+                </router-link>
+                <div class="button clear-button__disable">
+                    Clear history
+                </div>
+            </div>
+
+        </div>
+        <History />
+    </div>
 </template>
 
 <script>
+    import "../css/style.css"
+    import History from "./History";
+
     export default {
-        name: "FirstPage"
+        name: "FirstPage",
+        components: {History}
     }
 </script>
 
