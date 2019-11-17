@@ -130,6 +130,12 @@ a{
     background-color: #b54041;
 }
 
+.clear-button__enable:hover{
+    color: #4B9C7B;
+    background-color: #FFFFFF;
+    transition: .3s;
+}
+
 .back-button{
     text-decoration: none;
     background-color: #FFFFFF;
@@ -139,6 +145,7 @@ a{
 .back-button:hover{
     color: white;
     background-color: #b54041;
+    transition: .3s;
 }
 
 .history-wrapper{

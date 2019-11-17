@@ -12,7 +12,7 @@
                     </div>
                 </div>
                 <div class="button-wrapper">
-                    <div v-on:click="printScreen" id="cap" class="button camera-button">
+                    <div @click="printScreen" id="cap" class="button camera-button">
                         Capture
                     </div>
                     <router-link to="/">
@@ -22,10 +22,7 @@
                     </router-link>
                 </div>
             </div>
-<!--            <canvas class="hid" id="hidden-canvas"></canvas>-->
-<!--            <canvas class="hid" id="can"></canvas>-->
             <canvas id="canvas"></canvas>
-
         </div>
     </div>
 </template>
@@ -37,15 +34,6 @@
 
     export default {
         name: "SecondPage",
-
-        data() {
-            return {
-                // images: [
-                //     {canvas: document.querySelector('canvas'), loaded:false}
-                // ]
-            };
-        },
-
         methods:{
             async Camera(){
                 navigator.mediaDevices.getUserMedia({
@@ -74,10 +62,8 @@
 
                 const imgUrl = photo.toDataURL('image/png');
 
-                // Create img element
                 const img = document.createElement('img');
 
-                // Set img src
                 img.setAttribute('src', imgUrl);
 
                 photos.prepend(img);
@@ -87,7 +73,6 @@
         },
         mounted() {
             this.Camera();
-            //this.printScreen();
         }
     }
 </script>

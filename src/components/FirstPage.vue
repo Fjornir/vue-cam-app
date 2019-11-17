@@ -12,13 +12,12 @@
                     Open camera
                 </div>
                 </router-link>
-                <div id="clr" class="button clear-button__disable">
+                <div @click="clear" id="clr" class="button clear-button__disable">
                     Clear history
                 </div>
             </div>
 
         </div>
-        {{name}}
     </div>
 </template>
 
@@ -29,7 +28,28 @@
 
     export default {
         name: "FirstPage",
-        props:{name}
+        methods:{
+            changeButton(){
+                const butnDis = document.querySelector('#clr');
+                const arrImg = document.querySelector('#photos');
+
+                if(arrImg.childNodes.length >= 1){
+                    butnDis.classList.toggle('clear-button__enable');
+                    // eslint-disable-next-line no-console
+                    console.log(1)
+                }
+            },
+
+            clear(){
+                const butnDis = document.querySelector('#clr');
+                document.querySelector('#photos').innerHTML = "";
+                butnDis.classList.toggle('clear-button__disable');
+            }
+        },
+       mounted() {
+            this.changeButton();
+        }
+
 
     }
 </script>
