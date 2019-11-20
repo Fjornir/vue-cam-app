@@ -35,15 +35,12 @@
 
                 if(arrImg.childNodes.length >= 1){
                     butnDis.classList.toggle('clear-button__enable');
-                    // eslint-disable-next-line no-console
-                    console.log(1)
                 }
             },
 
-            clear(){
-                const butnDis = document.querySelector('#clr');
+            async clear(){
                 document.querySelector('#photos').innerHTML = "";
-                butnDis.classList.toggle('clear-button__disable');
+                await document.querySelector('#clr').classList.toggle('clear-button__disable');
             }
         },
        mounted() {

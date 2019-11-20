@@ -58,6 +58,12 @@
                 let photoContext = photo.getContext('2d');
                 const photos = document.getElementById('photos');
 
+                // let width = video.videoWidth,
+                //     height = video.videoHeight;
+
+                photo.width = video.videoWidth;
+                photo.height = video.videoHeight;
+
                 photoContext.drawImage(video, 0, 0, photo.width, photo.height);
 
                 const imgUrl = photo.toDataURL('image/png');
@@ -78,9 +84,5 @@
 </script>
 
 <style scoped>
-    .hid{
-        width: 500px;
-        height: 500px;
-        outline: 1px solid red;
-    }
+
 </style>
