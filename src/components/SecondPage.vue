@@ -58,9 +58,6 @@
                 let photoContext = photo.getContext('2d');
                 const photos = document.getElementById('photos');
 
-                // let width = video.videoWidth,
-                //     height = video.videoHeight;
-
                 photo.width = video.videoWidth;
                 photo.height = video.videoHeight;
 

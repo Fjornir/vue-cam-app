@@ -38,9 +38,9 @@
                 }
             },
 
-            async clear(){
+            clear(){
                 document.querySelector('#photos').innerHTML = "";
-                await document.querySelector('#clr').classList.toggle('clear-button__disable');
+                document.querySelector('#clr').classList.toggle('clear-button__disable');
             }
         },
        mounted() {
